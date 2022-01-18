@@ -1,0 +1,205 @@
+.slider {
+  height: calc(100vh - 160px);
+  background-color: white;
+  width: 100%;
+  margin: auto;
+  cursor: url('http://unionagency.one/exzo/img/drag.png') 16 9, ew-resize;
+  overflow: hidden;
+}
+
+.slider-cont {
+  height: 100%;
+  width: max-content;
+  transition: all 0.3s ease-out;
+}
+
+.slider-item {
+  display: inline-block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.slider-image {
+  position: absolute;
+  pointer-events: none;
+  max-height: 80%;
+  max-width: 40%;
+  display: block;
+  /* filter: drop-shadow(40px 20px 4px rgba(0, 0, 0, 0.7)); */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-item-cont {
+  position: relative;
+  height: max-content;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 1200px;
+  transform: translate(-50%, -50%);
+}
+
+.slider-item-info {
+  pointer-events: none;
+  position: absolute;
+  width: 45%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #e5f5da;
+  font-family: 'Questrial';
+}
+
+.slider-item-info h4 {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.slider-item-info h1 {
+  color: white;
+  font-weight: 900;
+  font-family: 'Raleway';
+  font-size: 70px;
+  text-transform: uppercase;
+}
+
+.slider-item-desc {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+li {
+  padding: 4px 25px;
+  position: relative;
+  list-style-type: none;
+}
+
+.slider-item-desc > p {
+  margin-bottom: 22px;
+}
+
+.slider-item-info li::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 12px;
+  left: -0px;
+  background-image: url('http://unionagency.one/exzo/img/icon-21.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 17px;
+  height: 17px;
+}
+
+.title-underline {
+  height: 1px;
+  margin: 15px 20px;
+  position: relative;
+  width: 70px;
+  background-color: white;
+}
+
+.title-underline::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 5px;
+  left: -15px;
+  background-color: white;
+}
+
+.slider-item-info-footer {
+  display: flex;
+  margin-top: 50px;
+  text-transform: uppercase;
+}
+
+.slider-item-price {
+  flex-basis: 180px;
+  font-family: 'Questrial';
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.slider-item-btns-cont {
+  display: flex;
+  gap: 10px;
+}
+
+.slider-item-btn-cont {
+  pointer-events: all;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  width: 130px;
+  border-radius: 50px;
+}
+
+.slider-item-btn-cont::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  transform: scale(0.5);
+  opacity: 0.7;
+  top: -35%;
+  left: -35%;
+  border-radius: 100px;
+  background-color: inherit;
+  width: 170%;
+  height: 170%;
+}
+
+.slider-item-btn-cont:hover::after {
+  animation: slider-btn 0.3s ease-in forwards;
+}
+
+@keyframes slider-btn {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.slider-item-btn {
+  width: 130px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.slider-item-btn-content {
+  width: max-content;
+  transform: translateX(-130px);
+  transition: all 0.2s;
+}
+
+.slider-item-btn-content:hover {
+  transform: translateX(0px);
+}
+
+.slider-item-btn-content > * {
+  display: inline-block;
+  width: 130px;
+  text-align: center;
+}
+
+.slider-item-btn-icon {
+  font-size: 30px;
+  transform: translateY(8px);
+}
+.slider-item-btn-text {
+  font-family: 'Raleway';
+  line-height: 50px;
+  font-size: 11px;
+}
